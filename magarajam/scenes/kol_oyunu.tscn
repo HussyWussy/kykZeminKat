@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpq4tdbgde4mr"]
+
+[ext_resource type="Script" path="res://scripts/kol_oyunu.gd" id="1_l8ak1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8xcc3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nscxu"]
+size = Vector2(0.998576, 0.964713)
+
+[node name="kol_oyunu" type="Node2D"]
+position = Vector2(827.5, 90.6667)
+script = ExtResource("1_l8ak1")
+
+[node name="yuzdelik" type="Label" parent="."]
+offset_left = -102.0
+offset_top = -10.0
+offset_right = -8.0
+offset_bottom = 21.0
+text = "%100"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="kolkolu" type="Node2D" parent="."]
+position = Vector2(-27.5, 42.3333)
+
+[node name="kol" type="Sprite2D" parent="kolkolu"]
+position = Vector2(63, 0)
+scale = Vector2(139, 12)
+texture = SubResource("CanvasTexture_8xcc3")
+
+[node name="Area2D" type="Area2D" parent="kolkolu/kol"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kolkolu/kol/Area2D"]
+position = Vector2(4.76837e-07, 3.8147e-06)
+shape = SubResource("RectangleShape2D_nscxu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -17.5
+offset_top = -24.6667
+offset_right = 22.5
+offset_bottom = -1.6667
+text = "kolu çevir"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="kolkolu/kol/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="kolkolu/kol/Area2D" to="." method="_on_area_2d_mouse_exited"]

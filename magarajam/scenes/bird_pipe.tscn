@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxxxgpvaqlmdb"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0jgif"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3rok"]
+size = Vector2(1.03704, 2.06061)
+
+[node name="MeshInstance2D" type="MeshInstance2D"]
+position = Vector2(60.125, 5)
+scale = Vector2(81.75, 3)
+mesh = SubResource("CylinderMesh_0jgif")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.0185165, 0.030303)
+shape = SubResource("RectangleShape2D_d3rok")

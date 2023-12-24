@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://drydtdjdy2fbm"]
+
+[ext_resource type="Script" path="res://scripts/sayi_oyunu.gd" id="1_xg8fe"]
+
+[node name="sayi_oyunu" type="Node2D"]
+script = ExtResource("1_xg8fe")
+
+[node name="azaltma" type="Button" parent="."]
+offset_left = -66.0494
+offset_top = 7.81851
+offset_right = -5.04942
+offset_bottom = 38.8185
+text = "-"
+
+[node name="artırma" type="Button" parent="."]
+offset_left = 10.4938
+offset_top = 7.81851
+offset_right = 75.4938
+offset_bottom = 38.8185
+text = "+"
+
+[node name="sayimiz" type="Label" parent="."]
+offset_left = 10.4938
+offset_top = -32.9222
+offset_right = 81.4938
+offset_bottom = 3.07775
+text = "90"
+horizontal_alignment = 1
+
+[node name="hedefsayi" type="Label" parent="."]
+offset_left = -66.0494
+offset_top = -32.9222
+offset_right = 0.950623
+offset_bottom = -0.922226
+text = "100"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -59.0
+offset_right = -8.0
+offset_bottom = -36.0
+text = "sayıları eşitle"
+
+[connection signal="pressed" from="azaltma" to="." method="_on_azaltma_pressed"]
+[connection signal="pressed" from="artırma" to="." method="_on_artırma_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

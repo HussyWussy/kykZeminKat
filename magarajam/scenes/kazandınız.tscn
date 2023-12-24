@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqxcde5qj8i6y"]
+
+[ext_resource type="Theme" uid="uid://dhp3isj2jkcl4" path="res://start.tres" id="1_jdblc"]
+[ext_resource type="Script" path="res://scripts/kazandınız.gd" id="2_c7isb"]
+
+[node name="kazandınız" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jdblc")
+script = ExtResource("2_c7isb")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 176.0
+offset_right = 1235.0
+offset_bottom = 369.0
+text = "KYKrooms dan kaçabildiniz
+
+Tebrikler"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 839.0
+offset_top = 610.0
+offset_right = 1149.0
+offset_bottom = 752.0
+text = "Menü"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

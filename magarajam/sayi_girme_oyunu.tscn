@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3 uid="uid://1jdmi7txoxfa"]
+
+[ext_resource type="Script" path="res://scripts/sayi_girme_oyunu.gd" id="1_7ut04"]
+
+[node name="sayi_girme_oyunu" type="Node2D"]
+visible = false
+position = Vector2(100, 50)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_7ut04")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 6.0
+offset_top = 41.0
+offset_right = 31.0
+offset_bottom = 72.0
+text = "9"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -19.0
+offset_top = 41.0
+offset_right = 6.0
+offset_bottom = 72.0
+text = "8"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = -43.0
+offset_top = 41.0
+offset_right = -19.0
+offset_bottom = 72.0
+text = "7"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 6.0
+offset_top = 10.0
+offset_right = 31.0
+offset_bottom = 41.0
+text = "6"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = -19.0
+offset_top = 10.0
+offset_right = 6.0
+offset_bottom = 41.0
+text = "5"
+
+[node name="Button6" type="Button" parent="."]
+offset_left = -43.0
+offset_top = 10.0
+offset_right = -19.0
+offset_bottom = 41.0
+text = "4"
+
+[node name="Button7" type="Button" parent="."]
+offset_left = -19.0
+offset_top = -21.0
+offset_right = 6.0
+offset_bottom = 10.0
+text = "2"
+
+[node name="Button8" type="Button" parent="."]
+offset_left = -42.0
+offset_top = -21.0
+offset_right = -18.0
+offset_bottom = 10.0
+text = "1"
+
+[node name="Button9" type="Button" parent="."]
+offset_left = 6.0
+offset_top = -21.0
+offset_right = 32.0
+offset_bottom = 10.0
+text = "3"
+
+[node name="Button10" type="Button" parent="."]
+offset_left = -19.0
+offset_top = 72.0
+offset_right = 6.0
+offset_bottom = 103.0
+text = "0"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -43.0
+offset_top = -57.0
+offset_right = 24.0
+offset_bottom = -31.0
+text = "kod"
+horizontal_alignment = 1

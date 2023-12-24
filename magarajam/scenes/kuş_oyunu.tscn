@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjpcsr8u33gmu"]
+
+[ext_resource type="Script" path="res://scripts/kuş_oyunu.gd" id="1_m6viv"]
+[ext_resource type="Script" path="res://scripts/RigidBody2D.gd" id="2_sr513"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cgqvm"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_el60i"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_i0qfk"]
+
+[node name="kuş_oyunu" type="Node2D"]
+script = ExtResource("1_m6viv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -87.0
+offset_right = 148.0
+offset_bottom = 80.0
+color = Color(0.309804, 0.0745098, 0.180392, 1)
+
+[node name="Button" type="Button" parent="."]
+offset_left = -86.0
+offset_top = 1.0
+offset_right = -54.0
+offset_bottom = 39.0
+text = "^"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -87.0
+offset_top = 40.667
+offset_right = -53.0
+offset_bottom = 76.667
+text = "v"
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-13, 40.667)
+script = ExtResource("2_sr513")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_cgqvm")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D"]
+position = Vector2(-1.16229e-05, 0.166986)
+scale = Vector2(20.0227, 21)
+mesh = SubResource("SphereMesh_el60i")
+texture = SubResource("ViewportTexture_i0qfk")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
+shape = SubResource("CircleShape2D_cgqvm")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -57.0
+offset_top = -31.0
+offset_right = -17.0
+offset_bottom = -8.0
+text = "engellere çarpma"
+
+[connection signal="pressed" from="Button" to="RigidBody2D" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="RigidBody2D" method="_on_button_2_pressed"]
+[connection signal="area_entered" from="RigidBody2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

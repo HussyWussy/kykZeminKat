@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpmuuadcst276"]
+
+[ext_resource type="Theme" uid="uid://dhp3isj2jkcl4" path="res://start.tres" id="1_1tilq"]
+[ext_resource type="Script" path="res://scripts/kaybettiniz.gd" id="2_beyor"]
+
+[node name="kaybettiniz" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1tilq")
+script = ExtResource("2_beyor")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 176.0
+offset_right = 1235.0
+offset_bottom = 369.0
+text = "OYUN BİTTİ
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 784.0
+offset_right = 1105.0
+offset_bottom = 926.0
+text = "Menü"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 607.0
+offset_right = 1105.0
+offset_bottom = 749.0
+text = "Yeniden?"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
